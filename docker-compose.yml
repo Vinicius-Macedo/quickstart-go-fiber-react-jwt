@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: "postgres:latest"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend/cmd:/app/cmd
