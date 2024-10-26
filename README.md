@@ -11,7 +11,7 @@ Este é um projeto quickstart que implementa um sistema de autenticação básic
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/Vinicius-Macedo/quickstart-go-fiber-react-jwt.git
+    git clone https://github.com/Vinicius-Macedo/quickstart-go-fiber-react-jwt.git](https://github.com/Vinicius-Macedo/quickstart-go-fiber-react-jwt
     cd quickstart-go-fiber-react-jwt/
     ```
 
@@ -36,7 +36,7 @@ Este é um projeto quickstart que implementa um sistema de autenticação básic
 ## Tecnologias Utilizadas
 
 - React
-- Go (Golang)
+- Fiber (Golang)
 - PostgreSQL
 - Docker
 - Docker Compose
